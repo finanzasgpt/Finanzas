@@ -10,6 +10,7 @@ header {
     color: #fff;
     padding: 1rem;
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 nav ul {
@@ -31,6 +32,9 @@ nav ul li a {
 .section {
     padding: 2rem;
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
 }
 
 .card {
@@ -39,11 +43,12 @@ nav ul li a {
     margin: 1rem;
     display: inline-block;
     width: 30%;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 form {
@@ -79,6 +84,7 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
+    animation: fadeIn 1s ease-in-out;
 }
 
 #ads {
@@ -87,4 +93,13 @@ footer {
     color: #333;
     padding: 1rem;
     border: 1px solid #ddd;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
