@@ -18,6 +18,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 nav ul li {
@@ -37,16 +38,19 @@ nav ul li a {
     animation-delay: 0.5s;
 }
 
-.card {
+.card, .article {
     border: 1px solid #ddd;
     padding: 1rem;
     margin: 1rem;
     display: inline-block;
     width: 30%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.7s;
 }
 
-.card:hover {
+.card:hover, .article:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -55,6 +59,9 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.6s;
 }
 
 form input, form textarea {
@@ -93,6 +100,9 @@ footer {
     color: #333;
     padding: 1rem;
     border: 1px solid #ddd;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 @keyframes fadeIn {
@@ -101,5 +111,16 @@ footer {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
